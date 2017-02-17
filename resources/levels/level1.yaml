@@ -84,3 +84,64 @@ obstacles:
    - type: wall
      position: {x: 1032, y: 632}
      rotation: 0
+waypoints: 
+   - type: node
+     position: {x: 300, y: 800}
+     radius: 40
+   - type: node
+     position: {x: 590, y: 800}
+     radius: 40
+   - type: node
+     position: {x: 640, y: 470}
+     radius: 40
+   - type: node
+     position: {x: 630, y: 85}
+     radius: 40
+   - type: node
+     position: {x: 1300, y: 80}
+     radius: 40
+   - type: node
+     position: {x: 1300, y: 475}
+     radius: 40
+   - type: node
+     position: {x: 1250, y: 800}
+     radius: 40
+   - type: node
+     position: {x: 990, y: 430}
+     radius: 40
+   - type: node
+     position: {x: 200, y: 465}
+     radius: 40
+   - type: node
+     position: {x: 150, y: 80}
+     radius: 40
+   - type: node
+     position: {x: 970, y: 230}
+     radius: 40
+   - type: node
+     position: {x: 630, y: 700}
+     radius: 40
+   - type: node
+     position: {x: 180, y: 600}
+     radius: 40
+   - type: node
+     position: {x: 580, y: 280}
+     radius: 40
+   - type: node
+     position: {x: 1230, y: 550}
+     radius: 40
+   - type: node
+     position: {x: 900, y: 780}
+     radius: 40
+   - type: node
+     position: {x: 300, y: 640}
+     radius: 40
+   - type: node
+     position: {x: 700, y: 450}
+     radius: 40
+   - type: node
+     position: {x: 880, y: 760}
+     radius: 40
+   - type: node
+     position: {x: 940, y: 130}
+     radius: 40

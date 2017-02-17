@@ -1,4 +1,16 @@
-﻿  EntityCreator.cpp
+﻿  TankAi.cpp
+g:\ecs_example-master\src\ai\tankai.cpp(116): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  LevelSystem.cpp
+  AiControlSystem.cpp
+g:\ecs_example-master\src\systems\aicontrolsystem.cpp(45): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  main.cpp
+  Ai.cpp
+  GameManager.cpp
+  Game.cpp
+g:\ecs_example-master\src\game.cpp(7): warning C4244: 'initializing': conversion from 'double' to 'sf::Int32', possible loss of data
+  EntityCreator.cpp
 g:\ecs_example-master\include\entityx\entity.h(582): warning C4291: 'void *operator new(std::size_t,void *) throw()': no matching operator delete found; memory will not be freed if initialization throws an exception
   c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_new.h(86): note: see declaration of 'operator new'
   g:\ecs_example-master\include\entityx\entity.h(866): note: see reference to function template instantiation 'entityx::ComponentHandle<Derived,entityx::EntityManager> entityx::EntityManager::assign<C,>(entityx::Entity::Id)' being compiled
@@ -25,6 +37,19 @@ g:\ecs_example-master\include\entityx\entity.h(582): warning C4244: 'argument': 
           [
               Derived=Motion
           ]
+g:\ecs_example-master\include\entityx\entity.h(582): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  g:\ecs_example-master\include\entityx\entity.h(866): note: see reference to function template instantiation 'entityx::ComponentHandle<Derived,entityx::EntityManager> entityx::EntityManager::assign<C,double&>(entityx::Entity::Id,double &)' being compiled
+          with
+          [
+              Derived=Node,
+              C=Node
+          ]
+  g:\ecs_example-master\src\entitycreator.cpp(109): note: see reference to function template instantiation 'entityx::ComponentHandle<Derived,entityx::EntityManager> entityx::Entity::assign<Node,double&>(double &)' being compiled
+          with
+          [
+              Derived=Node
+          ]
+  Generating Code...
   ECS_Example.vcxproj -> G:\ECS_Example-master\Debug\ECS_Example.exe
   ECS_Example.vcxproj -> G:\ECS_Example-master\Debug\ECS_Example.pdb (Partial PDB)
   G:\ECS_Example-master\dlls\sfml-audio-2.dll

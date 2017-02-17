@@ -1,4 +1,5 @@
 #include "systems/RenderSystem.h"
+#include <string>
 
 using namespace entityx;
 
@@ -22,6 +23,7 @@ void RenderSystem::update(EntityManager &entities,
 {
    m_window.clear(sf::Color::Black);
 
+   Node::Handle node;
    Background::Handle background;
    Position::Handle position;
    for (Entity entity : entities.entities_with_components(background, position))
@@ -40,7 +42,10 @@ void RenderSystem::update(EntityManager &entities,
 		   if (entity.has_component<Turret>())
 		   { 
 			   m_sprite.setOrigin(display->m_coord.width / 3.0, display->m_coord.height / 2.0);
-			   
+			   if (entity.has_component<PlayerControl>())
+			   {
+				//   std::cout << std::to_string(position->m_position.x) + ", " + std::to_string(position->m_position.y) << std::endl;
+			   }
 				// Uncomment the block below to see debug draw for turret
 				
 				/*Volume::Handle turretVol = entity.component<Volume>();	
@@ -49,18 +54,27 @@ void RenderSystem::update(EntityManager &entities,
 				turretRect.setPosition(position->m_position);
 				turretRect.setOutlineColor(sf::Color(250, 150, 100));
 				turretRect.setRotation(position->m_rotation);				
-				m_window.draw(turretRect);	*/					
+				m_window.draw(turretRect);*/						
 		   }					
 		   m_sprite.setPosition(position->m_position);
 		   m_sprite.setRotation(position->m_rotation);		 
 		   m_sprite.setTextureRect(display->m_coord);
 		   m_sprite.setColor(display->m_color);		 
-		   m_window.draw(m_sprite);		   
+		   m_window.draw(m_sprite);	
 	   }
 	   else
 	   {
 		   entity.destroy();
 	   }
+   }
+
+   for (Entity entity : entities.entities_with_components(position, node))
+   {
+	   sf::CircleShape hitCircle(node->m_radius);
+	   hitCircle.setPosition(position->m_position);
+	   hitCircle.setFillColor(sf::Color::Red);
+	   hitCircle.setOutlineColor(sf::Color::Black);
+	   m_window.draw(hitCircle);
    }
 
 }

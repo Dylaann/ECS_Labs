@@ -7,6 +7,8 @@
 #include "components/Background.h"
 #include "components/Display.h"
 #include "components/Turret.h"
+#include "components\PlayerControl.h"
+#include "Node.h"
 #include "ScreenSize.h"
 #include "ResourcePath.hpp"
 

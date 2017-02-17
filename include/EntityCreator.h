@@ -13,7 +13,10 @@
 #include "components/Parent.h"
 #include "components\PlayerControl.h"
 #include "utils/LevelLoader.h"
-
+#include "components/Wall.h" 
+#include "components/AI.h"
+#include "AI/TankAI.h"
+#include "Node.h"
 
 class BackgroundCreator : public ICreatable
 {
@@ -57,3 +60,36 @@ private:
 	entityx::Entity& m_parentEntity;
 	bool m_isAi;
 };
+
+class WallCreator : public ICreatable
+{
+public:
+
+	WallCreator(std::string type,
+		sf::Vector2f position,
+		double rotation);
+
+	void create(entityx::Entity& entity);
+
+private:
+	std::string m_type;
+	sf::Vector2f m_position;
+	double m_rotation;
+};
+
+class NodeCreator : public ICreatable
+{
+public:
+
+	NodeCreator(std::string type,
+		sf::Vector2f position,
+		double radius);
+
+	void create(entityx::Entity& entity);
+
+private:
+	std::string m_type;
+	sf::Vector2f m_position;
+	double radius;
+};
+
