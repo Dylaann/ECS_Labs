@@ -47,6 +47,20 @@ struct EvReportPlayerId : public entityx::Event<EvReportPlayerId>
 	entityx::Entity::Id m_playerId;
 };
 
+
+/// <summary>
+/// An event used to determine the waypoint number
+/// </summary>
+struct EvReportNewWaypoint : public entityx::Event<EvReportNewWaypoint>
+{
+	EvReportNewWaypoint(int path)
+		: m_Path(path)
+	{
+	}
+
+	int m_Path;
+};
+
 /// <summary>
 /// A keyboard event.
 /// </summary>

@@ -11,6 +11,7 @@
 #include "Node.h"
 #include "ScreenSize.h"
 #include "ResourcePath.hpp"
+#include "AI\TankAi.h"
 
 
 /// <summary>

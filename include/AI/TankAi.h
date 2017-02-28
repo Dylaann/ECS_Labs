@@ -5,6 +5,7 @@
 #include "components/Parent.h"
 #include "components/Position.h"
 #include "components/Motion.h"
+#include "systems/Events.h"
 #include "Node.h"
 #include "utils/BTMath.h"
 #include <SFML/Graphics.hpp>
@@ -22,6 +23,7 @@ public:
    void update(entityx::Entity::Id playerId,  
 	           entityx::Entity::Id aiId,
                entityx::EntityManager& entities,
+			   entityx::EventManager& events,
                double dt);
  
    enum class AiType
@@ -29,6 +31,7 @@ public:
 	   AI_ID_NONE, 
 	   AI_ID_SEEK_SHOOT_AT_PLAYER
    };
+
 
 private:
 	sf::Vector2f seek(entityx::Entity::Id playerId,
@@ -38,7 +41,7 @@ private:
 	sf::Vector2f collisionAvoidance(entityx::Entity::Id aiId, 
 						            entityx::EntityManager& entities);
 
-	sf::Vector2f pathFollow(entityx::Entity::Id aiId, entityx::EntityManager & entities);
+	sf::Vector2f pathFollow(entityx::Entity::Id aiId, entityx::EntityManager & entities, entityx::EventManager& events);
 
 	const sf::CircleShape findMostThreateningObstacle(entityx::Entity::Id aiId,
 													  entityx::EntityManager& entities);

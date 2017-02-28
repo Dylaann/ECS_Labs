@@ -60,6 +60,7 @@ void AiControlSystem::update(entityx::EntityManager& entities,
 	   m_tankAi->update(m_playerId, 
 		                    entity.id(),
 							entities, 
+						    events,
 							dt);
   
    }

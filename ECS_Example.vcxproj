@@ -52,6 +52,7 @@
     <ClInclude Include="Text.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="HUDSystem.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="src\AI\TankAi.cpp" />
     <ClCompile Include="src\components\Ai.cpp" />

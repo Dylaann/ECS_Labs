@@ -13,6 +13,7 @@
 #include "systems/MovementSystem.h"
 #include "systems/PlayerControlSystem.h"
 #include "systems\AiControlSystem.h"
+#include "HUDSystem.h"
 
 #include "KeyHandler.h"
 

@@ -126,11 +126,11 @@
     <ClInclude Include="Node.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
-    <ClInclude Include="HUDSystem.h">
-      <Filter>Header Files\systems</Filter>
-    </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="HUDSystem.h">
+      <Filter>Header Files\systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +219,9 @@
       <Filter>Source Files\components</Filter>
     </ClCompile>
     <ClCompile Include="Text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HUDSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

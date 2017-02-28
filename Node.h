@@ -19,4 +19,5 @@ struct Node : public entityx::Component<Node>
 	Node(int radius);
 
 	int m_radius;
+	bool m_current = false;
 };

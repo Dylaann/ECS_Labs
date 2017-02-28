@@ -13,18 +13,21 @@ TankAi::TankAi(std::vector<sf::CircleShape> const & obstacles, entityx::Entity::
 void TankAi::update(entityx::Entity::Id playerId,
 	entityx::Entity::Id aiId,
 	entityx::EntityManager& entities,
+	entityx::EventManager& events,
 	double dt)
 {
 	entityx::Entity aiTank = entities.get(aiId);
 	Motion::Handle motion = aiTank.component<Motion>();
 	Position::Handle position = aiTank.component<Position>();
+	
 
 	sf::Vector2f vectorToNode = pathFollow(aiId,
-		entities);
+		entities, events);
 
 	sf::Vector2f vectorToPlayer = seek(playerId,
 		aiId,
 		entities);
+
 	switch (m_aiBehaviour)
 	{
 	case AiBehaviour::SEEK_PLAYER:
@@ -157,7 +160,7 @@ const sf::CircleShape TankAi::findMostThreateningObstacle(entityx::Entity::Id ai
 }
 
 
-sf::Vector2f TankAi::pathFollow(entityx::Entity::Id aiId, entityx::EntityManager & entities)
+sf::Vector2f TankAi::pathFollow(entityx::Entity::Id aiId, entityx::EntityManager & entities, entityx::EventManager& events)
 {
 	entityx::Entity aiTank = entities.get(aiId);
 	Position::Handle aiPos = aiTank.component<Position>();
@@ -167,8 +170,8 @@ sf::Vector2f TankAi::pathFollow(entityx::Entity::Id aiId, entityx::EntityManager
 		if (Math::distance(aiPos->m_position, m_nodes.at(path).getOrigin()) < m_nodes.at(path).getRadius() + 40)
 	{
 		VectorToNode = m_nodes.at(path).getOrigin() - aiPos->m_position;
-
 		path +=1;
+		events.emit<EvReportNewWaypoint>(path);
 
 		if (path == size)
 		{

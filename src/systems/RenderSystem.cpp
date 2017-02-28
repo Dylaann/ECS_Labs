@@ -23,7 +23,6 @@ void RenderSystem::update(EntityManager &entities,
 {
    m_window.clear(sf::Color::Black);
 
-   Node::Handle node;
    Background::Handle background;
    Position::Handle position;
    for (Entity entity : entities.entities_with_components(background, position))
@@ -66,15 +65,6 @@ void RenderSystem::update(EntityManager &entities,
 	   {
 		   entity.destroy();
 	   }
-   }
-
-   for (Entity entity : entities.entities_with_components(position, node))
-   {
-	   sf::CircleShape hitCircle(node->m_radius);
-	   hitCircle.setPosition(position->m_position);
-	   hitCircle.setFillColor(sf::Color::Red);
-	   hitCircle.setOutlineColor(sf::Color::Black);
-	   m_window.draw(hitCircle);
    }
 
 }
